@@ -31,7 +31,7 @@ export default function ContactForm() {
   return (
     <div className="recruiting-contact-area pb-120" id="contact">
       <div className="container">
-        <div className="row justify-content-center g-4" data-cues="slideInUp" data-duration="1000">
+        <div className="row justify-content-center g-4">
           <div className="col-xl-5 col-md-12">
             <div className="recruiting-contact-information">
               <div className="info">

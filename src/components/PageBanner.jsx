@@ -7,17 +7,17 @@ import { Link } from 'react-router-dom';
  *  - breadcrumb: [{ label, to? }]  (last item has no `to`)
  *  - bannerImage: string (path under /assets/images/)
  */
-export default function PageBanner({ title, breadcrumb, bannerImage }) {
+export default function PageBanner({ title, breadcrumb = [], bannerImage }) {
   return (
     <div className="page-banner-area">
       <div className="container-fluid">
-        <div className="row justify-content-center align-items-center g-4" data-cues="slideInUp" data-duration="1000">
+        <div className="row justify-content-center align-items-center g-4">
           <div className="col-xl-8 col-md-12">
             <div className="page-banner-content">
               <div className="content section-title-animation animation-style1">
                 <h2 className="title-animation">{title}</h2>
                 <ul className="list">
-                  {breadcrumb.map((crumb, i) => (
+                  {(breadcrumb || []).map((crumb, i) => (
                     <li key={i}>
                       {crumb.to ? <Link to={crumb.to}>{crumb.label}</Link> : crumb.label}
                     </li>

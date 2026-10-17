@@ -8,11 +8,15 @@ export default function MainLayout() {
   const [loading, setLoading] = useState(true);
   const location = useLocation();
 
-  // Simulate page transition preloader
+  // Initial site load preloader only (one-time, 250ms)
   useEffect(() => {
-    setLoading(true);
-    const t = setTimeout(() => setLoading(false), 600);
+    const t = setTimeout(() => setLoading(false), 250);
     return () => clearTimeout(t);
+  }, []);
+
+  // Scroll to top on route change
+  useEffect(() => {
+    window.scrollTo(0, 0);
   }, [location.pathname]);
 
   // Back to top button

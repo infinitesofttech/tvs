@@ -131,3 +131,26 @@
 
 /* Remove default Vite styles */
 #root { max-width: none; margin: 0; padding: 0; text-align: unset; }
+
+/* ── Fix blank screen issue caused by scrollCue in React SPA ─────── */
+[data-cue],
+[data-cues] > *,
+[data-cue=slideInUp],
+[data-cues=slideInUp] > *,
+[data-cue=fadeIn],
+[data-cues=fadeIn] > * {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+}
+
+/* Ensure inner pages container and banners are always visible */
+.page-banner-area,
+.outsourcing-appointment-area,
+.profile-authentication-area,
+.terms-condition-area,
+.privacy-policy-area,
+.recruiting-contact-area {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
