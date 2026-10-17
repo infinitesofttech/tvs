@@ -1,0 +1,133 @@
+/* ── Extra styles for the React app ────────────────────────────── */
+
+/* Calendar */
+.appointment-calendar {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  margin-bottom: 24px;
+}
+.calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+.calendar-header button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 22px;
+  color: var(--heading-color, #010101);
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+.calendar-header button:hover { background: #f0f0f0; }
+.calendar-header span { font-weight: 700; font-size: 16px; }
+.calendar-days-header {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  font-size: 12px;
+  color: #999;
+  margin-bottom: 8px;
+}
+.days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+.days div {
+  text-align: center;
+  padding: 8px 4px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.days .prev-date, .days .next-date { color: #ccc; cursor: default; }
+.days .curr-date:hover { background: #f0f0f0; }
+.days .curr-date.active {
+  background: var(--main-color, #010101);
+  color: #fff;
+}
+
+/* Time slots */
+.appointment-slots {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+.appointment-slots h5 {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: var(--heading-color, #010101);
+}
+#slots {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+.slot {
+  padding: 8px 4px;
+  border-radius: 6px;
+  border: 1.5px solid #e0e0e0;
+  text-align: center;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s;
+  background: #fff;
+}
+.slot:hover:not(.booked) {
+  border-color: var(--main-color, #010101);
+  background: var(--main-color, #010101);
+  color: #fff;
+}
+.slot.active {
+  background: var(--main-color, #010101);
+  color: #fff;
+  border-color: var(--main-color, #010101);
+}
+.slot.booked {
+  background: #fafafa;
+  color: #bbb;
+  cursor: not-allowed;
+  text-decoration: line-through;
+}
+.no-slots { color: #999; font-size: 14px; }
+
+/* Appointment form wrap */
+.appointment-form-wrap {
+  background: #fff;
+  border-radius: 12px;
+  padding: 32px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+.appointment-form-wrap .content h3 { margin-bottom: 8px; }
+.appointment-form-wrap .content p { margin-bottom: 24px; color: #666; }
+
+/* Navbar dropdown hover (CSS-based fallback) */
+.navbar .nav-item:hover > .dropdown-menu {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Policy content */
+.policy-content h3 {
+  margin-top: 36px;
+  margin-bottom: 12px;
+  font-size: 20px;
+}
+.policy-content p, .policy-content ul {
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 16px;
+}
+
+/* Remove default Vite styles */
+#root { max-width: none; margin: 0; padding: 0; text-align: unset; }
